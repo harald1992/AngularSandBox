@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="col-md-9">
+    <p>UserName Assignment coupled with Display Details Assignment:</p>
+    <input type="text" class="form-control" [(ngModel)]="userName" />
+
+    <button type="button" class="btn btn-primary" (click)="onCreateUser()">
+      Create user: '{{ userName }}'
+    </button>
+
+    <button class="btn btn-secondary" (click)="userName = ''">
+      Reset User
+    </button>
+  </div>
+</div>

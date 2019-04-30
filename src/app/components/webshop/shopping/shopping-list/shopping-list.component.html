@@ -1,0 +1,21 @@
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Name (Amount)</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+
+  <tr
+    *ngFor="let ingredient of shoppingList; let i = index"
+    style="cursor:pointer"
+  >
+    <td>
+      {{ ingredient.name }}
+      <span [ngClass]="{ hideThis: ingredient.amount < 2 }">
+        ( {{ ingredient.amount }} )</span
+      >
+    </td>
+    <td>{{ ingredient.price }}</td>
+  </tr>
+</table>

@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <app-game-control (counted)="imcrementCount($event)"></app-game-control>
+      {{ count }}
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-md-6">
+      <app-even [count]="count"></app-even>
+    </div>
+    <div class="col-md-6">
+      <app-odd [count]="count"></app-odd>
+    </div>
+  </div>
+</div>
+<hr />

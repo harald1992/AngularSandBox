@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <app-shopping-list [shoppingList]="shoppingList"></app-shopping-list>
+    </div>
+    <div class="col-md-6">
+      <app-edit-shopping-list
+        (addIngredient)="addIngredient($event)"
+      ></app-edit-shopping-list>
+    </div>
+  </div>
+</div>

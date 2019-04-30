@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success">New Recipe</button>
+    <button appBasicHighlight>New Recipe Highlighted with Directive</button>
+  </div>
+</div>
+
+<hr />
+
+<div class="row">
+  <div class="col-xs-12">
+    <a
+      class="list-group-item clearfix"
+      *ngFor="let recipeItem of recipeList; let i = index"
+    >
+      <button (click)="selectRecipe(recipeItem)">
+        <app-recipe-item [recipeItem]="recipeItem"></app-recipe-item>
+      </button>
+    </a>
+  </div>
+</div>

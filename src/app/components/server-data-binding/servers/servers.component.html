@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <label>Server Name</label>
+    </div>
+    <div class="col-md-3">
+      <input type="text" class="form-control" [(ngModel)]="serverName" />
+    </div>
+
+    <div class="col-md-3">
+      <button
+        type="button"
+        class="btn btn-success"
+        [disabled]="!allowNewServer"
+        (click)="onCreateServer()"
+      >
+        Add Server ( {{ allowNewServer }})
+      </button>
+    </div>
+    <div class="col-md-4">
+      <p *ngIf="serverCreated; else noServer">{{ serverCreationStatus }}</p>
+    </div>
+  </div>
+</div>
+
+<ng-template #noServer>
+  <p #noServer>No Server created</p>
+</ng-template>
+
+<br />
+
+<app-server
+  *ngFor="let server of servers"
+  [srvElements]="servers"
+  (eventForParent)="ListenedForChildFunction($event)"
+></app-server>
+
+<div class="row">
+  <div class="col-md-6">
+    <h5>
+      Info of last server generated. (Obtained by event emitter from child).
+    </h5>
+  </div>
+  <div class="col-md-6"><p innerText="{{ inntertextt }}"></p></div>
+</div>
+
+<input type="text" #inputLocalReference />
+
+<button (click)="printLocalReference(inputLocalReference)">
+  Print local reference input-element
+</button>
+
+<input type="text" #serverContentInputForViewChild />
+<button (click)="consoleLogValueViaViewchild()">
+  Console log local reference via viechild.
+</button>
+
+<ng-content> </ng-content>

@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\agenda",
+    "\\src\\app\\alert-messages",
+    "\\src\\app\\server",
+    "\\src\\app\\servers"
+  ],
+  "SelectedNode": "\\src\\app\\app.component.html",
+  "PreviewInSolutionExplorer": false
+}
