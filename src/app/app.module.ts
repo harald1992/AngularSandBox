@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -11,7 +10,7 @@ import { ServerDataBindingModule } from './components/server-data-binding/server
 import { WebshopModule } from './components/webshop/webshop.module';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
-import { DirectivesModule } from './shared/directives/directives.module';
+import { AppDirectivesModule } from './shared/directives/directives.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -19,13 +18,12 @@ import { DirectivesModule } from './shared/directives/directives.module';
     AppRoutingModule,
     BrowserModule,
     FormsModule,
-    HttpModule,
     RouterModule,
     AssignmentsModule,
     PracticeStuffModule,
     ServerDataBindingModule,
     WebshopModule,
-    DirectivesModule
+    AppDirectivesModule
   ],
   exports: [HeaderComponent],
 

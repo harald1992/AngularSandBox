@@ -1,3 +1,7 @@
 .hideThis {
   visibility: hidden;
 }
+
+.selectedIngredientMarkup {
+  background-color: gray;
+}

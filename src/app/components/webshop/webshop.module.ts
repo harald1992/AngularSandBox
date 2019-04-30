@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { WebshopComponent } from './webshop.component';
 import { ShoppingComponent } from './shopping/shopping.component';
@@ -11,7 +12,7 @@ import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component'
 import { RecipeItemComponent } from './recipe/recipe-item/recipe-item.component';
 import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
 import { WebshopRoutingModule } from './webshop-routing.module';
-import { BrowserModule } from '@angular/platform-browser';
+import { AppDirectivesModule } from 'src/app/shared/directives/directives.module';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { BrowserModule } from '@angular/platform-browser';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    WebshopRoutingModule
+    WebshopRoutingModule,
+    AppDirectivesModule
   ],
   declarations: [
     WebshopComponent,

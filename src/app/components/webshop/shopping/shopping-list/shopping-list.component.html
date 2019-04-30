@@ -1,3 +1,13 @@
+<p>
+  SearchBox
+  <input
+    appBasicHightlight
+    type="text"
+    [(ngModel)]="filter"
+    (input)="filterShoppingList(filter)"
+  />
+</p>
+
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
@@ -5,10 +15,11 @@
       <th>Price</th>
     </tr>
   </thead>
-
   <tr
-    *ngFor="let ingredient of shoppingList; let i = index"
+    *ngFor="let ingredient of filteredShoppingList; let i = index"
     style="cursor:pointer"
+    [ngClass]="{ selectedIngredientMarkup: selectedIngredientIndex === i }"
+    (click)="select(i)"
   >
     <td>
       {{ ingredient.name }}
