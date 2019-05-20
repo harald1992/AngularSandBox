@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
     { name: 'Assignments', path: '/assignments' },
     { name: 'Practice Stuff', path: '/practice-stuff' },
     { name: 'Server Data Binding', path: '/server-data-binding' },
+    { name: 'Directives Deep Dive', path: '/directives-deep-dive' },
     { name: 'Webshop', path: '/webshop' }
   ];
   constructor() {}

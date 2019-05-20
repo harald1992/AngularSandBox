@@ -11,9 +11,10 @@ import { WebshopModule } from './components/webshop/webshop.module';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppDirectivesModule } from './shared/directives/directives.module';
+import { DirectivesDeepDiveComponent } from './components/directives-deep-dive/directives-deep-dive.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, DirectivesDeepDiveComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,

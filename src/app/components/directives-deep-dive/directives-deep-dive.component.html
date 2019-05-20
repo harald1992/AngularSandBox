@@ -1,0 +1,16 @@
+<p appBasicHightlight>Colored by basic highlight directive</p>
+
+<p appBetterHighlight>Colored by better highlight directive (uses renderer)</p>
+
+<p [appAppBindtoHostHighlight]="['darkgray', 'yellow']">
+  Hostbinding en hostlistener. (directive die waardes via input meekrijgen
+  (dynamisch))
+</p>
+
+<div *appUnlessStarDirective="true">
+  <!-- The * means it wraps it in an ngTemplate -->
+  I show because custom directive *Unless is true.
+</div>
+<div *appUnlessStarDirective="false">
+  I show because custom directive *Unless is false
+</div>
