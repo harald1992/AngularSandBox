@@ -16,10 +16,11 @@ export class ServersComponent implements OnInit {
   inntertextt: string;
 
   // ViewChild argument is the selector of this element.
-  @ViewChild('serverContentInputForViewChild')
+  @ViewChild('serverContentInputForViewChild', { static: true })
   serverContentInputForViewChild: ElementRef; // You can use a local reference as input.
 
-  @ViewChild(ServerComponent) serverComponentView; // Can also select a component: then use cComponent type in viewchild input.
+  @ViewChild(ServerComponent, { static: false }) serverComponentView;
+  // Can also select a component: then use cComponent type in viewchild input.
   // This selects the first occorrence of the Component.
 
   constructor() {
@@ -28,7 +29,7 @@ export class ServersComponent implements OnInit {
     }, 2000);
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   onCreateServer() {
     this.servers.push(this.serverName);
