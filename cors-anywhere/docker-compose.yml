@@ -1,0 +1,8 @@
+version: '3.6'
+services:
+  cors-anywhere:
+    image: registry-ddm.ace.nl.capgemini.com:443/cors
+    container_name: cors-anywhere
+    build: .
+    ports:
+      - 55001:55001
