@@ -1,27 +1,25 @@
-<button type="button" class="btn"
-        (click)="DisplayDetails()">
+<button type="button" class="btn" (click)="DisplayDetails()">
   Display Details
 </button>
 
-<div [ngStyle]="{backgroundColor: getDisplayColor()}"
-  [ngClass]="{displayColor : detailsDisplayed === true }">
+<div
+  [ngStyle]="{ backgroundColor: getDisplayColor() }"
+  [ngClass]="{ displayColor: detailsDisplayed === true }"
+>
+  <p *ngIf="detailsDisplayed; else noDetails">
+    Id = {{ iD }} Password = {{ password }}
+  </p>
 
-<p *ngIf="detailsDisplayed; else noDetails">
-  Id =  {{ iD }} 
-  Password = {{ password}} </p>
+  <br />
+  Times Clicked =
+  <div *ngFor="let logItem of log">{{ logItem }}</div>
 
-  <br/>
-  Times Clicked = 
-    <div     *ngFor="let logItem of log">      {{ logItem}} </div>
+  {{ log }}
+  <br />
 
-    {{ log }}
-  <br/>
-
-
-<ng-template #noDetails>
+  <ng-template #noDetails>
     <p #noDetails>No Details available</p>
   </ng-template>
-
 </div>
 
 <!-- [ngStyle]="{backgroundColor: logItem >= 5 ? 'blue' : 'red'}" > -->

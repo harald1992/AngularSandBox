@@ -12,9 +12,10 @@ import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppDirectivesModule } from './shared/directives/directives.module';
 import { DirectivesDeepDiveComponent } from './components/directives-deep-dive/directives-deep-dive.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, DirectivesDeepDiveComponent],
+  declarations: [AppComponent, HeaderComponent, DirectivesDeepDiveComponent, FooterComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,

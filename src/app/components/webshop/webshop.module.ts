@@ -13,6 +13,7 @@ import { RecipeItemComponent } from './recipe/recipe-item/recipe-item.component'
 import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
 import { WebshopRoutingModule } from './webshop-routing.module';
 import { AppDirectivesModule } from 'src/app/shared/directives/directives.module';
+import { RecipeService } from 'src/app/shared/services/recipe.service';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { AppDirectivesModule } from 'src/app/shared/directives/directives.module
     RecipeItemComponent,
     RecipeDetailComponent
   ],
-  exports: []
+  exports: [],
+  providers: [RecipeService]
 })
 export class WebshopModule {}

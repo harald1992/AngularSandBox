@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Ingredient } from 'src/app/shared/models';
+import { ShoppingService } from 'src/app/shared/services/shopping.service';
 
 @Component({
   selector: 'app-shopping',
@@ -8,26 +9,20 @@ import { Ingredient } from 'src/app/shared/models';
   styleUrls: ['./shopping.component.css']
 })
 export class ShoppingComponent implements OnInit {
-  shoppingList: Ingredient[] = [
-    {
-      name: 'Cheese',
-      amount: 1,
-      price: 3.6
-    },
-    new Ingredient('Corn', 6, 2.4)
-    // Works too because of constructor in Ingredient Model.
-  ];
-  constructor() {}
+  shoppingList: Ingredient[];
 
-  ngOnInit() {}
+  constructor(private shoppingService: ShoppingService) {}
 
-  addIngredient(ingredient: Ingredient) {
-    const ingr = ingredient;
-    ingr.price = this.roundTo2Decimals(Math.random());
-    this.shoppingList.push(ingr);
+  ngOnInit() {
+    this.shoppingList = this.shoppingService.getShoppingList();
+    this.shoppingService.shoppingListUpdated.subscribe(
+      (shoppingList: Ingredient[]) => {
+        this.shoppingList = shoppingList;
+      }
+    );
   }
 
-  roundTo2Decimals(input: number) {
-    return Math.round(input * 100) / 100;
+  addIngredient(ingr: Ingredient) {
+    this.shoppingService.addIngredient(ingr);
   }
 }
